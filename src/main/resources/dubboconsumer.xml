@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+         http://code.alibabatech.com/schema/dubbo
+         http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-autowire="byName">
+
+    <dubbo:application name="banksteel-userapp"/>
+
+    <dubbo:registry address="zookeeper://localhost:2181" protocol="zookeeper"/>
+
+    <dubbo:reference interface="com.yoparty.mapper.UserMapper" id="userMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.UserRoleMapper" id="userRoleMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.UserPartnerMapper" id="userPartnerMapper" check="false"
+                     timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.ActivityMapper" id="activityMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.AreaMapper" id="areaMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.FullcutMapper" id="fullcutMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.LeaderActivityMapper" id="leaderActivityMapper" check="false"
+                     timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.LeaderMapper" id="leaderMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.PartnerMapper" id="partnerMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.RoleMapper" id="roleMapper" check="false" timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.SignupUserMapper" id="signupUserMapper" check="false"
+                     timeout="10000"/>
+    <dubbo:reference interface="com.yoparty.mapper.SignupUserPartnerMapper" id="signupUserPartnerMapper" check="false"
+                     timeout="10000"/>
+</beans>
